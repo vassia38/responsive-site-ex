@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="index.css">
+<meta charset="UTF-8">
+</head>
+<body>
+    <header>
+        <img id="header-img" src="imgs/header-img.png">
+        <div id="header-menu">
+            <div id="menu-top">
+                <div id="contact-number">
+                    <img src="imgs/callphone.png">
+                    <h3>916.543.1543</h3>
+                </div>
+                <div id="get-quote">
+                    <h3>GET A FREE QUOTE &#709;</h3>
+                </div>
+            </div>
+            <ul>
+                <li>HOME</li>
+                <li>ABOUT</li>
+                <li>V3 CARES</li>
+                <li>PRODUCTS</li>
+                <li>SERVICES</li>
+                <li>CONTACT</li>
+            </ul>
+        </div>
+        <img id="header-logo" src="imgs/logo.png">
+    </header>
+    <div class="hero">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="imgs/slideshow1.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img src="imgs/slideshow2.jpg">
+            </div>
+            <div class="mySlides fade">
+                <img src="imgs/slideshow3.jpg"">
+            </div>
+
+            <div id="hero-message-box">
+                <h1>WE ARE YOUR NEIGHBORS</h1>
+                <p>Fusce et orci leo. Nulla condimentum et magna sit amet rhoncus. 
+                    Pellentesque dignissim mi non ipsum Suspendisse vulputate porta mi, 
+                    non interdum metus tempus quis. Donec gravida, tortor aliquet consequat sagittis
+                    <span onclick=showMore(event) style="cursor: pointer;">
+                        [...]
+                    </span>
+                    <span style="display: none;">
+                        diam arcu mattis dolor, 
+                        a pellentesquevulputatultrices justo euismod. Integer tempus
+                    </span>
+                    <div id="hero-get-quote">
+                        <h3>
+                            GET A FREE QUOTE
+                        </h3>
+                    </div>
+                </p>
+            </div>
+
+            <div class="dots" style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    <div class="about-us">
+        <ul class="about-us-list">
+            <li>
+                <img src="imgs/gear2.png">
+                <h3>EASY TO USE EQUIPMENT</h3>
+                <div class="read-more-wrapper">
+                    <p>
+                        Pellentesque dignissim mi non ipsum
+                        vulputatultrices justo euismod [...] 
+                    </p>
+                    <button class="read-more-button">READ MORE ></button>
+                </div>
+            </li>
+            <li>
+                <img src="imgs/phone2.png">
+                <h3>A SYSTEM YOU'LL ACTUALLY USE</h3>
+                <div class="read-more-wrapper">
+                    <p>
+                        Suspendisse vulputate porta mi, non interdum metus 
+                        tempus quis
+                        <span style="cursor: pointer;">
+                            [...]
+                        </span>
+                        <!-- <span style="display: none;">
+                            gravida, tortor aliquet consequat sagittis, diam arcu 
+                            mattis dolor, a pellentesque
+                        </span> -->
+                    </p>
+                    <button class="read-more-button">READ MORE ></button>
+                </div>
+            </li>
+            <li>
+                <img src="imgs/news2.png">
+                <h3>SAVE UP TO $20 A MONTH ON YOUR ENERGY BILL</h3>
+                <div class="read-more-wrapper">
+                    <p>
+                        Fusce et orci leo. Nulla condimentum et magna sit amet 
+                        rhoncus. 
+                        <span style="cursor: pointer;">
+                            [...]
+                        </span>
+                        <!-- <span style="display: none;">
+                            dignissim mi non ipsum vulputatultrices justo euismod. 
+                            Integer tempus
+                        </span> -->
+                    </p>
+                    <button class="read-more-button">READ MORE ></button>
+                </div>
+            </li>
+        </ul>
+        <div class="about-us-main">
+            <div class="about-us-title">
+                <hr>
+                <h2>About Us</h2>
+                <hr>
+            </div>
+            <p>
+                We are Northern California’s premiere local home security and automation provider. We firmly believe in giving the residents of our communities the best protection, and we pride ourselves in providing top-quality equipment, prompt response from expert technicians, and courteous customer service. As our customers you are not just a number—you are members of the same community that we live in; we are your neighbors. We will never cut corners to save time or money. You will receive excellent service year after year to give you the safety and peace of mind you want and deserve.
+                <br><br>
+                At V3 Security, we pride ourselves on being Northern California’s premier home security and home automation providers. We know that your family’s home and safety is unbelievably important to you, and because you’re a part of our local family, it’s important to us as well.
+            </p>
+        </div>
+    </div>
+    <div class="our-clients" style="margin-top:5em">
+    </div>
+
+    <script>
+        showMore = (e) => {
+            e.target.style.display = 'none';
+            e.target.nextElementSibling.style.display = "block";
+        }
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 5000);
+        }
+        var slideIndex = 0;
+        showSlides();
+    </script>
+</body>
+</html>
